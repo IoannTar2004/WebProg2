@@ -8,7 +8,7 @@ for(let i = 1; i <= 3; i += 0.5) {
         document.getElementById('coor-R_x').innerHTML = -i;
         document.getElementById('coor-Rd2_y').innerHTML = -i / 2;
         document.getElementById('coor-R_y').innerHTML = -i;
-        
+
         document.getElementById('inputR').value = i;
         changeDot(i);
     });
@@ -30,7 +30,7 @@ document.getElementById('submit').addEventListener('click', () => {
         message += 'Выберите хотя бы одно значение X!\n';
         alertt = true;
     }
-    
+
     let dataY = document.getElementById('inputY').value;
     if (!/\d/.test(dataY) || dataY < -3 || dataY > 3) {
         message += 'Введите Y от -3 до 3!';
@@ -47,12 +47,12 @@ document.getElementById('submit').addEventListener('click', () => {
     } else {
         let xhr = new XMLHttpRequest;
 
-        xhr.open('POST', 'script.php', true);
+        xhr.open('POST', window.location.href + '/controller', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-        xhr.send('data=' + JSON.stringify(data));
+        xhr.send("data=" + JSON.stringify(data));
         xhr.onload = function() {
-            addToTable(xhr.responseText);
+            //addToTable(xhr.responseText);
         }
     }
 });

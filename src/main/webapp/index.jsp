@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
-    <title>Lab 1</title>
+    <title>Lab 2</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -101,8 +100,6 @@
 </table>
 
 </body>
-<script src="javascripts/validation.js"></script>
-<script src="javascripts/addToTable.js"></script>
-<script src="javascripts/canvas.js"></script>
-<script src="javascripts/dot.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/canvas.js"></script>
 </html>
