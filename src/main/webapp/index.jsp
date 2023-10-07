@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="org.example.model.Point" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
@@ -6,7 +8,7 @@
 </head>
 <body>
 <div id="topbox">
-    <div class="topText">Тарасов Иван Сергеевич. Группа: P3230. Вариант: 1114</div>
+    <div class="topText">Тарасов Иван Сергеевич. Группа: P3230. Вариант: 53124</div>
 </div>
 
 <div id="tablebox">
@@ -28,44 +30,45 @@
     </div>
 
 
+    <form action="./controller" method="post">
     <div id="parametersbox">
         <div id="form" style="text-align: center;">
             <p class="coorhead">Изменение X</p>
             <div id="parametersx">
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_-3" name="checkbox[]" style="transform:scale(1.3);" value="-3">-3
+                    <input type="checkbox" id="cb_-5" name="checkbox(-5)" style="transform:scale(1.3);" value="-5">-5
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_0" name="checkbox[]" style="transform:scale(1.3);" value="0">0
+                    <input type="checkbox" id="cb_-4" name="checkbox(-4)" style="transform:scale(1.3);" value="-4">-4
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_3" name="checkbox[]" style="transform:scale(1.3);" value="3">3
+                    <input type="checkbox" id="cb_-3" name="checkbox(-3)" style="transform:scale(1.3);" value="-3">-3
                 </label>
                 <br>
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_-2" name="checkbox[]" style="transform:scale(1.3);" value="-2">-2
+                    <input type="checkbox" id="cb_-2" name="checkbox(-2)" style="transform:scale(1.3);" value="-2">-2
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_1" name="checkbox[]" style="transform:scale(1.3);" value="1">1
+                    <input type="checkbox" id="cb_-1" name="checkbox(-1)" style="transform:scale(1.3);" value="-1">-1
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_4" name="checkbox[]" style="transform:scale(1.3);" value="4">4
+                    <input type="checkbox" id="cb_0" name="checkbox(0)" style="transform:scale(1.3);" value="0">0
                 </label>
                 <br>
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_-1" name="checkbox[]" style="transform:scale(1.3);" value="-1">-1
+                    <input type="checkbox" id="cb_1" name="checkbox(1)" style="transform:scale(1.3);" value="1">1
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_2" name="checkbox[]" style="transform:scale(1.3);" value="2">2
+                    <input type="checkbox" id="cb_2" name="checkbox(2)" style="transform:scale(1.3);" value="2">2
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" id="cb_5" name="checkbox[]" style="transform:scale(1.3);" value="2">5
+                    <input type="checkbox" id="cb_3" name="checkbox(3)" style="transform:scale(1.3);" value="3">3
                 </label>
             </div>
 
@@ -81,9 +84,10 @@
             <input type="button" value="2.5" id="b_2.5" name="inputR">
             <input type="button" value="3" id="b_3" name="inputR">
             <br>
-            <input type="button" id="submit" value="Отправить">
+            <input type="submit" id="submit" value="Отправить">
         </div>
     </div>
+    </form>
 </div>
 <table>
     <thead>
@@ -95,7 +99,17 @@
     </tr>
     </thead>
     <tbody id="tbody">
-
+        <% List<Point> pointList = (List<Point>) request.getAttribute("points");
+        if (pointList != null) {
+            for (Point point: pointList) { %>
+            <tr>
+                <td>R=<%=point.getR()%>: (<%=point.getX()%>;<%=point.getY()%>)</td>
+                <td><%=point.getStatus()%></td>
+                <td><%=request.getAttribute("currentTime")%></td>
+                <td><%=point.getScriptTime()%> нс</td>
+            </tr>
+            <%}
+            }%>
     </tbody>
 </table>
 
