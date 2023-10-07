@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@WebServlet(name = "controller", urlPatterns = { "/controller" })
+@WebServlet(name = "ControllerServlet", urlPatterns = { "/controller" })
 public class ControllerServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) {

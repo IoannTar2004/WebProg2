@@ -14,9 +14,17 @@ import java.util.List;
 public class AreaCheckServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        List<Point> pointList = (List<Point>) req.getAttribute("points");
-        PointManager service = new PointManager(pointList);
+        HttpSession session = req.getSession();
+        List<Point> pointList = (List<Point>) session.getAttribute("allPoints");
+
+        List<Point> newPoints = (List<Point>) req.getAttribute("points");
+        PointManager service = new PointManager(newPoints);
         service.check();
+
+        if (pointList != null) pointList.addAll(newPoints);
+        else pointList = newPoints;
+        session.setAttribute("allPoints", pointList);
+
         req.setAttribute("points", pointList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
