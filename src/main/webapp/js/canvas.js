@@ -9,25 +9,24 @@ ctx.fillStyle = 'white';
 ctx.fillRect(0, 0, h, w);
 
 //фигуры
-ctx.beginPath();
 ctx.fillStyle = '#42aaff';
+ctx.fillRect(w/2, h/2 - label*2, label*2, label*2);
+
+ctx.beginPath();
 ctx.strokeStyle = '#42aaff';
 ctx.lineWidth = '1';
 ctx.moveTo(w/2, h/2);
-ctx.lineTo(w/2, h/2 - label*2);
-ctx.lineTo(w/2 - label*2, h/2);
+ctx.lineTo(w/2 - label, h/2);
+ctx.lineTo(w/2, h/2 + label);
 ctx.stroke();
 ctx.closePath();
 ctx.fill();
 
-ctx.fillRect(w/2 - label*2, h/2, label*2, label*2);
-
 ctx.beginPath();
-ctx.strokeStyle = '#42aaff';
-ctx.arc(w/2, h/2, label, -Math.PI/2, 0, false);
-ctx.moveTo(w/2 + label, h/2);
+ctx.arc(w/2, h/2, label*2, 0, Math.PI/2, false);
+ctx.moveTo(w/2 + label * 2, h/2);
+ctx.lineTo(w/2, h/2 + label * 2);
 ctx.lineTo(w/2, h/2);
-ctx.lineTo(w/2, h/2 - label);
 ctx.stroke();
 ctx.closePath();
 ctx.fill();
