@@ -111,7 +111,11 @@ body {
 }
 
 #parametersx {
+    border-collapse: separate;
+    border-spacing: 8px 0;
     font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .coorhead {
@@ -138,7 +142,7 @@ body {
     border-color: yellow;
 }
 
-table {
+#result-table {
     float: right;
     margin-right: 20px;
     margin-top: 120px;
@@ -146,30 +150,30 @@ table {
 
 }
 
-th {
+#result-table th {
     padding: 10px;
     background-color: rgb(207 35 61);
     color: white;
 }
 
-td {
+#result-table td {
     text-align: center;
     padding: 5px;
 }
 
-th:nth-child(odd) {
+#result-table th:nth-child(odd) {
     background-color: rgb(178 37 58);
 }
 
-tr:nth-child(even) {
+#result-table tr:nth-child(even) {
     background-color: rgb(255 255 255);
 }
 
-tr:nth-child(odd) {
+#result-table tr:nth-child(odd) {
     background-color: rgb(234 226 226);
 }
 
-tr:hover {
+#result-table tr:hover {
     background-color: rgb(202 200 200);
 }
 

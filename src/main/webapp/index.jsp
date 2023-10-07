@@ -34,43 +34,47 @@
     <div id="parametersbox">
         <div id="form" style="text-align: center;">
             <p class="coorhead">Изменение X</p>
-            <div id="parametersx">
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_-5" name="checkbox(-5)" style="transform:scale(1.3);" value="-5">-5
-                </label>
+            <table id="parametersx">
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_-5" name="checkbox(-5)" style="transform:scale(1.3);" value="-5">-5
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_-4" name="checkbox(-4)" style="transform:scale(1.3);" value="-4">-4
-                </label>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_-2" name="checkbox(-2)" style="transform:scale(1.3);" value="-2">-2
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_-3" name="checkbox(-3)" style="transform:scale(1.3);" value="-3">-3
-                </label>
-                <br>
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_-2" name="checkbox(-2)" style="transform:scale(1.3);" value="-2">-2
-                </label>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_1" name="checkbox(1)" style="transform:scale(1.3);" value="-1">1
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_-4" name="checkbox(-4)" style="transform:scale(1.3);" value="-4">-4
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_-1" name="checkbox(-1)" style="transform:scale(1.3);" value="-1">-1
-                </label>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_-1" name="checkbox(-1)" style="transform:scale(1.3);" value="-1">-1
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_0" name="checkbox(0)" style="transform:scale(1.3);" value="0">0
-                </label>
-                <br>
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_1" name="checkbox(1)" style="transform:scale(1.3);" value="1">1
-                </label>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_2" name="checkbox(2)" style="transform:scale(1.3);" value="2">2
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_-3" name="checkbox(-3)" style="transform:scale(1.3);" value="-3">-3
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_2" name="checkbox(2)" style="transform:scale(1.3);" value="2">2
-                </label>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_0" name="checkbox(0)" style="transform:scale(1.3);" value="0"> 0
+                    </td>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="cb_3" name="checkbox(3)" style="transform:scale(1.3);" value="3">3
-                </label>
-            </div>
+                    <td class="checkbox">
+                        <input type="checkbox" id="cb_3" name="checkbox(3)" style="transform:scale(1.3);" value="3">3
+                    </td>
+                </tr>
+            </table>
 
             <p class="coorhead">Изменение Y</p>
             <input type="text" id="inputY" name="inputY" style="width: 105px;" placeholder="Число от -3 до 3">
@@ -89,7 +93,7 @@
     </div>
     </form>
 </div>
-<table>
+<table id="result-table">
     <thead>
     <tr>
         <th>Параметры</th>
