@@ -21,7 +21,7 @@ public class Validation {
         double r = Double.parseDouble(request.getParameter("inputR"));
         for (int i = 0; i < list.size(); i++) {
             int x = list.get(i);
-            if (x >= -5 & x <= 3 & y >= -3 & y <= 3 & r >= 2 & r <= 5) {
+            if (x >= -5 & x <= 3 & y >= -5 & y <= 3 & r >= 2 & r <= 5) {
                 pointList.add(new Point(x, y, r));
             } else {
                 throw new PointValidationException();
