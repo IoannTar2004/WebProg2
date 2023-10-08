@@ -1,19 +1,23 @@
-for(let i = 2; i <= 4; i += 0.5) {
-    console.log(document.getElementById('inputR').value)
-    document.getElementById(`b_${i}`).addEventListener('click', () => {
-        document.getElementById('coorRd2_x').innerHTML = i / 2;
-        document.getElementById('coorR_x').innerHTML = i;
-        document.getElementById('coorRd2_y').innerHTML = i / 2;
-        document.getElementById('coorR_y').innerHTML = i;
-        document.getElementById('coor-Rd2_x').innerHTML = -i / 2;
-        document.getElementById('coor-R_x').innerHTML = -i;
-        document.getElementById('coor-Rd2_y').innerHTML = -i / 2;
-        document.getElementById('coor-R_y').innerHTML = -i;
-
-        document.getElementById('inputR').value = i;
-        changeDot(i);
-    });
+function setCoordinates(i) {
+    document.getElementById('coorRd2_x').innerHTML = i / 2;
+    document.getElementById('coorR_x').innerHTML = i;
+    document.getElementById('coorRd2_y').innerHTML = i / 2;
+    document.getElementById('coorR_y').innerHTML = i;
+    document.getElementById('coor-Rd2_x').innerHTML = -i / 2;
+    document.getElementById('coor-R_x').innerHTML = -i;
+    document.getElementById('coor-Rd2_y').innerHTML = -i / 2;
+    document.getElementById('coor-R_y').innerHTML = -i;
 }
+
+document.getElementById('inputR').addEventListener('input', () => {
+    let i = parseFloat(document.getElementById('inputR').value);
+    if (!isNaN(i) && i.toString().length < 5) {
+        setCoordinates(i)
+        changeDot(i);
+    } else if (isNaN(i)) {
+        setCoordinates(0)
+    }
+});
 
 
 document.getElementById('submit').addEventListener('click', () => {

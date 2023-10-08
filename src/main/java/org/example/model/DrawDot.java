@@ -24,7 +24,7 @@ public class DrawDot {
     }
 
     public String color() {
-        if (point.getStatus().equals("Попал")) {
+        if (point.getStatus().equals("Попал!")) {
             return "lime";
         }
         return "red";

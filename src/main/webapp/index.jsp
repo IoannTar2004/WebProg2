@@ -46,41 +46,41 @@
             <p class="coorhead">Изменение X</p>
             <table id="parametersx">
                 <tr>
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_-5" name="checkbox(-5)" style="transform:scale(1.3);" value="-5">-5
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_-2" name="checkbox(-2)" style="transform:scale(1.3);" value="-2">-2
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_1" name="checkbox(1)" style="transform:scale(1.3);" value="1">1
                     </td>
                 </tr>
                 <tr>
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_-4" name="checkbox(-4)" style="transform:scale(1.3);" value="-4">-4
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_-1" name="checkbox(-1)" style="transform:scale(1.3);" value="-1">-1
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_2" name="checkbox(2)" style="transform:scale(1.3);" value="2">2
                     </td>
                 </tr>
                 <tr>
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_-3" name="checkbox(-3)" style="transform:scale(1.3);" value="-3">-3
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_0" name="checkbox(0)" style="transform:scale(1.3);" value="0"> 0
                     </td>
 
-                    <td class="checkbox">
+                    <td>
                         <input type="checkbox" id="cb_3" name="checkbox(3)" style="transform:scale(1.3);" value="3">3
                     </td>
                 </tr>
@@ -90,7 +90,7 @@
             <input type="text" class="input" name="inputY" placeholder="Число от -3 до 3">
 
             <p class="coorhead">Изменение R</p>
-            <input type="text" class="input" name="inputR" placeholder="Число от 2 до 5" value="2">
+            <input type="text" id="inputR" class="input" name="inputR" placeholder="Число от 2 до 5" value="2">
 
             <br>
             <input type="submit" id="submit" value="Отправить">
@@ -106,7 +106,7 @@
         <th>Затраченное время</th>
     </tr>
     </thead>
-    <tbody id="tbody">
+    <tbody>
         <% if (pointList != null) {
             for (Point point: pointList) { %>
             <tr>
@@ -123,4 +123,5 @@
 </body>
 <script src="js/validation.js"></script>
 <script src="js/canvas.js"></script>
+<script src="js/dot.js"></script>
 </html>
