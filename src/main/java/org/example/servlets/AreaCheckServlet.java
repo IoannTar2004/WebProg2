@@ -17,13 +17,15 @@ public class AreaCheckServlet extends HttpServlet {
         HttpSession session = req.getSession();
         List<Point> pointList = (List<Point>) session.getAttribute("allPoints");
 
-        List<Point> newPoints = (List<Point>) req.getAttribute("points");
-        PointManager service = new PointManager(newPoints);
-        service.check();
+        if (!(boolean) req.getAttribute("error")) {
+            List<Point> newPoints = (List<Point>) req.getAttribute("points");
+            PointManager service = new PointManager(newPoints);
+            service.check();
 
-        if (pointList != null) pointList.addAll(newPoints);
-        else pointList = newPoints;
-        session.setAttribute("allPoints", pointList);
+            if (pointList != null) pointList.addAll(newPoints);
+            else pointList = newPoints;
+            session.setAttribute("allPoints", pointList);
+        }
 
         req.setAttribute("points", pointList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");

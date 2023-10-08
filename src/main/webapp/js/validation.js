@@ -1,24 +1,3 @@
-function setCoordinates(i) {
-    document.getElementById('coorRd2_x').innerHTML = i / 2;
-    document.getElementById('coorR_x').innerHTML = i;
-    document.getElementById('coorRd2_y').innerHTML = i / 2;
-    document.getElementById('coorR_y').innerHTML = i;
-    document.getElementById('coor-Rd2_x').innerHTML = -i / 2;
-    document.getElementById('coor-R_x').innerHTML = -i;
-    document.getElementById('coor-Rd2_y').innerHTML = -i / 2;
-    document.getElementById('coor-R_y').innerHTML = -i;
-}
-
-document.getElementById('inputR').addEventListener('input', () => {
-    let i = parseFloat(document.getElementById('inputR').value);
-    if (!isNaN(i) && i.toString().length < 5) {
-        setCoordinates(i)
-        changeDot(i);
-    } else if (isNaN(i)) {
-        setCoordinates(0)
-    }
-});
-
 
 document.getElementById('form').addEventListener('submit', (e) => {
     let x = [];
@@ -36,9 +15,15 @@ document.getElementById('form').addEventListener('submit', (e) => {
         alertt = true;
     }
 
-    let dataY = document.getElementById('inputY').value;
-    if (!/\d/.test(dataY) || dataY < -5 || dataY > 3) {
+    let y = document.getElementById('inputY').value;
+    if (!/\d/.test(y) || y < -5 || y > 3) {
         message += 'Введите Y от -5 до 3!';
+        alertt = true;
+    }
+
+    let r = document.getElementById('inputR').value;
+    if (!/\d/.test(r) || r < -5 || r > 3) {
+        message += 'Введите R от -5 до 3!';
         alertt = true;
     }
 

@@ -17,6 +17,9 @@ public class Validation {
         List<Integer> list = arrayParse();
         List<Point> pointList = new LinkedList<>();
 
+        if (list.size() == 0 | request.getParameter("inputY") == null | request.getParameter("inputR") == null) {
+            throw new PointValidationException();
+        }
         double y = Double.parseDouble(request.getParameter("inputY"));
         double r = Double.parseDouble(request.getParameter("inputR"));
         for (int i = 0; i < list.size(); i++) {

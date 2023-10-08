@@ -38,7 +38,7 @@
         <div id="coor-R_x" class="coordinate">-2</div>
         <div id="coor-Rd2_y" class="coordinate">-1</div>
         <div id="coor-R_y" class="coordinate">-2</div>
-        <canvas id="whiteBack" width="400" height="500"></canvas>
+        <canvas id="whiteBack" width="250" height="250"></canvas>
     </div>
 
 
@@ -120,9 +120,10 @@
             }%>
     </tbody>
 </table>
-
+<div id="fixed-dot"></div>
 </body>
 <script src="js/validation.js"></script>
 <script src="js/canvas.js"></script>
 <script src="js/dot.js"></script>
+<script src="js/events.js"></script>
 </html>

@@ -95,11 +95,20 @@ body {
 }
 
 #canvas {
-    position: relative;
-    padding-left: 70px;
-    padding-top: 120px;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    left: 120px;
+    top: 320px;
 }
 
+/*#pointHover {*/
+/*    position: absolute;*/
+/*    height: 250px;*/
+/*    width: 250px;*/
+/*    background-color: white;*/
+
+/*}*/
 #parametersbox {
     position: absolute;
     height: 440px;
@@ -122,10 +131,6 @@ body {
     padding-top: 10px;
     font-size: 20px;
     font-weight: bold;
-}
-
-.checkbo {
-    margin-right: 10px;
 }
 
 .input {
@@ -189,4 +194,16 @@ body {
     width: 4px;
     align-content: center;
     background-color: red;
+}
+
+#fixed-dot {
+    display: none;
+    width: 4px;
+    height: 4px;
+    background-color: orangered;
+    transform: translateY(-50%) translateX(-50%); /* центрируем кружок */
+    position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
+    z-index: 999; /* чтобы элемент был над остальными элементами */
+    pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
+    transition: width 0.64s, height 0.64s, border-radius 0.64s, background 0.64s;
 }
