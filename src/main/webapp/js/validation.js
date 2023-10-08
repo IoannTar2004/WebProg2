@@ -1,4 +1,5 @@
-for(let i = 1; i <= 3; i += 0.5) {
+for(let i = 2; i <= 4; i += 0.5) {
+    console.log(document.getElementById('inputR').value)
     document.getElementById(`b_${i}`).addEventListener('click', () => {
         document.getElementById('coorRd2_x').innerHTML = i / 2;
         document.getElementById('coorR_x').innerHTML = i;
