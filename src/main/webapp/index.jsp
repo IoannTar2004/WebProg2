@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.example.model.Point" %>
 <%@ page import="org.example.model.DrawDot" %>
+<%@ page import="org.example.support.NumberManager" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
@@ -87,7 +88,7 @@
             </table>
 
             <p class="coorhead">Изменение Y</p>
-            <input type="text" class="input" name="inputY" placeholder="Число от -3 до 3">
+            <input type="text" id="inputY" class="input" name="inputY" placeholder="Число от -3 до 3">
 
             <p class="coorhead">Изменение R</p>
             <input type="text" id="inputR" class="input" name="inputR" placeholder="Число от 2 до 5" value="2">
@@ -110,7 +111,7 @@
         <% if (pointList != null) {
             for (Point point: pointList) { %>
             <tr>
-                <td>R=<%=point.getR()%>: (<%=point.getX()%>;<%=point.getY()%>)</td>
+                <td>R=<%=NumberManager.valueOf(point.getR())%>: (<%=point.getX()%>;<%=NumberManager.valueOf(point.getY())%>)</td>
                 <td><%=point.getStatus()%></td>
                 <td><%=request.getAttribute("currentTime")%></td>
                 <td><%=point.getScriptTime()%> нс</td>

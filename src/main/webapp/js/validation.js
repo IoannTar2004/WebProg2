@@ -20,44 +20,30 @@ document.getElementById('inputR').addEventListener('input', () => {
 });
 
 
-document.getElementById('submit').addEventListener('click', () => {
+document.getElementById('form').addEventListener('submit', (e) => {
     let x = [];
     let message = '';
     let alertt = false;
 
-    for (let i = -3; i <= 5; i++) {
+    for (let i = -5; i <= 3; i++) {
         let dataX = document.getElementById(`cb_${i}`);
         if(dataX.checked) {
             x.push(dataX.value);
         }
     }
-    if (x.length == 0) {
+    if (x.length === 0) {
         message += 'Выберите хотя бы одно значение X!\n';
         alertt = true;
     }
 
     let dataY = document.getElementById('inputY').value;
-    if (!/\d/.test(dataY) || dataY < -3 || dataY > 3) {
-        message += 'Введите Y от -3 до 3!';
+    if (!/\d/.test(dataY) || dataY < -5 || dataY > 3) {
+        message += 'Введите Y от -5 до 3!';
         alertt = true;
     }
 
-    let data = {
-        inputX: x,
-        inputY: dataY,
-        inputR: document.getElementById('inputR').value,
-    };
     if (alertt) {
         alert(message);
-    } else {
-        let xhr = new XMLHttpRequest;
-
-        xhr.open('POST', window.location.href + '/controller', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        xhr.send("data=" + JSON.stringify(data));
-        xhr.onload = function() {
-            //addToTable(xhr.responseText);
-        }
+        e.preventDefault();
     }
 });
