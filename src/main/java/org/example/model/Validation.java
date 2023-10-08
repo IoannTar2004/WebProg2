@@ -2,13 +2,12 @@ package org.example.model;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.example.exceptions.PointValidationException;
-import org.json.JSONArray;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class Validation {
-    private HttpServletRequest request;
+    private final HttpServletRequest request;
 
     public Validation(HttpServletRequest request) {
         this.request = request;
