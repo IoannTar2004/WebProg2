@@ -1,23 +1,23 @@
 package org.example.model;
 
 public class Point {
-    private int x;
+    private double x;
     private double y;
     private double r;
     private String status;
     private long scriptTime;
 
-    public Point(int x, double y, double r) {
+    public Point(double x, double y, double r) {
         this.x = x;
         this.y = y;
         this.r = r;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 

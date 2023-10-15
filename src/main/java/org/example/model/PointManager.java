@@ -12,10 +12,10 @@ public class PointManager {
     public void check() {
         long startScript = System.nanoTime();
         for (Point point: pointList) {
-            int x = point.getX();
+            double x = point.getX();
             double y = point.getY();
             double r = point.getR();
-            if ((x >= 0 && y >= 0 && x <= r && y <= r) || (x < 0 && y < 0 && y - x >= r) || (x > 0 && y < 0 && (x*x + y*y <= r*r))) {
+            if ((x >= 0 && y >= 0 && x <= r && y <= r) || (x < 0 && y < 0 && y + x >= -r/2) || (x > 0 && y < 0 && (x*x + y*y <= r*r))) {
                 point.setStatus("Попал!");
             } else {
                 point.setStatus("Не попал!");

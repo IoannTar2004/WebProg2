@@ -42,7 +42,7 @@
     </div>
 
 
-    <form id="form" action="./controller" method="post" style="text-align: center;">
+    <div id="form" style="text-align: center;">
     <div id="parametersbox">
             <p class="coorhead">Изменение X</p>
             <table id="parametersx">
@@ -96,7 +96,7 @@
             <br>
             <input type="submit" id="submit" value="Отправить">
         </div>
-    </form>
+    </div>
 </div>
 <table id="result-table">
     <thead>
@@ -104,14 +104,14 @@
         <th>Параметры</th>
         <th>Факт попадания</th>
         <th>Время отправки</th>
-        <th>Затраченное время</th>
+        <th style="width: 60px">Затраченное время</th>
     </tr>
     </thead>
     <tbody>
         <% if (pointList != null) {
             for (Point point: pointList) { %>
             <tr>
-                <td>R=<%=NumberManager.valueOf(point.getR())%>: (<%=point.getX()%>;<%=NumberManager.valueOf(point.getY())%>)</td>
+                <td>R=<%=NumberManager.valueOf(point.getR())%>: (<%=NumberManager.valueOf(point.getX())%>;<%=NumberManager.valueOf(point.getY())%>)</td>
                 <td><%=point.getStatus()%></td>
                 <td><%=request.getAttribute("currentTime")%></td>
                 <td><%=point.getScriptTime()%> нс</td>
@@ -125,5 +125,5 @@
 <script src="js/validation.js"></script>
 <script src="js/canvas.js"></script>
 <script src="js/dot.js"></script>
-<script src="js/events.js"></script>
+<script src="js/events.js"  ></script>
 </html>

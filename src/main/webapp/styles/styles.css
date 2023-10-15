@@ -28,7 +28,7 @@ body {
     border-radius: 20px;
     border: 3px solid silver;
     margin-top: 120px;
-    margin-left: 30px;
+    margin-left: 25px;
     box-shadow:0 0 50px 5px silver;
 }
 
@@ -102,13 +102,6 @@ body {
     top: 320px;
 }
 
-/*#pointHover {*/
-/*    position: absolute;*/
-/*    height: 250px;*/
-/*    width: 250px;*/
-/*    background-color: white;*/
-
-/*}*/
 #parametersbox {
     position: absolute;
     height: 440px;
@@ -153,7 +146,7 @@ body {
 
 #result-table {
     float: right;
-    margin-right: 20px;
+    margin-right: 25px;
     margin-top: 120px;
     border-collapse: collapse;
 
